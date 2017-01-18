@@ -87,7 +87,7 @@
         }
         var debounce = _.debounce(getChangedControls, saveFormDebounce);
         scope.$watch(function () {
-          return formModel.$dirty && formModel.$valid;
+          return formModel.$dirty
         }, function (newValue) {
           if (newValue) {
             debounce();
@@ -102,7 +102,7 @@
       }
 
       function getChangedControls(event) {
-        if (formModel.$invalid || formModel.$pristine) {
+        if (formModel.$pristine) {
           return;
         }
         var controls = {};
