@@ -101,7 +101,7 @@
       }
 
       function getChangedControls(event) {
-        if (formModel.$invalid || formModel.$pristine) {
+        if (formModel.$pristine) {
           return;
         }
         var controls = {};
